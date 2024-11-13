@@ -1,14 +1,12 @@
 const form =document.getElementById('form-atividade');
+const imgVerificado ='<img src="./imagens/verificado.png" alt="verificado"/>'
 const contatos=[]
 const numeros=[]
-const spanAdicionado='<span class="resultado adicionado">Adicionado</span>'
-const spanAdicionar='<span class="resultado adicionar">Adiconar</span>'
 let linhas ='';
 form.addEventListener('submit',function(e){
     e.preventDefault()
     adicionaLinha()
     atualizaTabela()
-    atualizaMediaFinal()
 });
 function adicionaLinha(){
     const inputNomeContatos=document.getElementById('nome-contato')
@@ -21,6 +19,7 @@ function adicionaLinha(){
     let linha ='<tr>'
     linha+=`<td>${inputNomeContatos.value}</td>`
     linha+=`<td>${inputNumeroContatos.value}</td>`
+    linha+=`<td>${inputNumeroContatos.value=imgVerificado}</td>`
     linha+='</tr>'
     
     linhas+=linha
@@ -31,8 +30,4 @@ function adicionaLinha(){
 function atualizaTabela(){
     const corpoTabela=document.querySelector('tbody')
     corpoTabela.innerHTML=linhas
-}
-function atualizaMediaFinal(){
-document.getElementById('contato').innerHTML=adicionado
-document.getElementById('contatos-adiconados').innerHTML=adicionado>=0?spanAprovado:spanAdicionar
 }
